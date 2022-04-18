@@ -44,6 +44,4 @@ public class TestWeb {
         String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
         assertEquals(expected, actualText);
     }
-
-
 }
