@@ -14,13 +14,14 @@ public class TestWeb {
     private WebDriver driver;
 
 
-    @BeforeAll
+    /*@BeforeAll
     static void setupClass() {
         WebDriverManager.chromedriver().setup();
-    }
+    }*/
 
     @BeforeEach
     public void setUp() {
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
