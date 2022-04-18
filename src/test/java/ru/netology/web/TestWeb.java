@@ -21,13 +21,18 @@ public class TestWeb {
 
     @BeforeEach
     public void setUp() {
+        driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
     }
-
+    @AfterEach
+    public void tearDown() {
+        driver.quit();
+        driver = null;
+    }
     @Test
     public void shouldSendForm() {
         driver.get("http://localhost:9999/");
@@ -40,9 +45,5 @@ public class TestWeb {
         assertEquals(expected, actualText);
     }
 
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
-        driver = null;
-    }
+
 }
