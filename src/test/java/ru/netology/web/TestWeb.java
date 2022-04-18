@@ -35,7 +35,7 @@ public class TestWeb {
     }
     @Test
     public void shouldSendForm() {
-        driver.get("http://localhost:9999/");
+        driver.get("http://localhost:7777/");
         driver.findElement(By.name("name")).sendKeys("Петров Василий");
         driver.findElement(By.name("phone")).sendKeys("+79177774411");
         driver.findElement(By.className("checkbox__box")).click();
